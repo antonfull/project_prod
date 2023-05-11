@@ -11,9 +11,6 @@ const defaultTheme =
 const ThemeProvider: FC = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(defaultTheme);
 
-  const toogleTheme = () => {
-    setTheme(theme === Theme.DARK ? Theme.LIGTH : Theme.DARK);
-  };
 
   const defaultProps = useMemo(
     () => ({
