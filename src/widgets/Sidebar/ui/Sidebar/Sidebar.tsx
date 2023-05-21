@@ -1,4 +1,6 @@
+import { BugButton } from 'app/providers/ErrorBoundary';
 import { useState } from "react";
+import { useTranslation } from 'react-i18next';
 import { classNames } from "shared/lib/ClassNames/classNames";
 import { LangSwitcher } from "shared/ui/LangSwitcher";
 import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
@@ -10,6 +12,7 @@ interface SidebarProps {
 
 const Sidebar = ({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
+  const {t} = useTranslation()
   const toogleCollapsed = () => {
     setCollapsed((prev) => !prev);
   };
@@ -19,7 +22,8 @@ const Sidebar = ({ className }: SidebarProps) => {
         className,
       ])}
     >
-      <button onClick={toogleCollapsed}>toogle</button>
+      <BugButton/>
+      <button onClick={toogleCollapsed}>{t('toogle')}</button>
       <div className={classNames(cls.switchers, {}, [])}>
         <ThemeSwitcher />
         <LangSwitcher className={classNames(cls.lang, {}, [])} />
