@@ -1,8 +1,10 @@
+const { off } = require('process');
+
 module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest:true,
+    jest: true,
   },
   extends: [
     "eslint:recommended",
@@ -19,6 +21,15 @@ module.exports = {
   plugins: ["react", "@typescript-eslint", "i18next"],
   rules: {
     "react/react-in-jsx-scope": "off",
-    "i18next/no-literal-string":['error', {markupOnly: true}]
+    "i18next/no-literal-string": [
+      "error",
+      { markupOnly: true, ignoreAttribute: ["data-testid"] },
+    ],
   },
+  overrides: [
+    {
+      files: ["**/src/**/*.test.{ts,tsx}"],
+      rules: {"i18next/no-literal-string": off}
+    },
+  ],
 };
