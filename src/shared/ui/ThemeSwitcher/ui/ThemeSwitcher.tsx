@@ -1,7 +1,7 @@
 import { useTheme } from "app/providers/ThemeProvider";
 import LightIcon from "shared/assets/icons/theme-light.svg";
 import DarkIcon from "shared/assets/icons/theme-dark.svg";
-import Button from "shared/ui/Button/Button";
+import Button, { ButtonTheme } from "shared/ui/Button/Button";
 
 
 const ThemeSwitcher = () => {
@@ -9,6 +9,7 @@ const ThemeSwitcher = () => {
 
   return (
     <Button
+    theme={ButtonTheme.CLEAR}
       /*Улби прокинул theme сюда, но я поставил по дефолту clear*/
       onClick={toogleTheme}
     >

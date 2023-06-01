@@ -4,10 +4,13 @@ import Sidebar from "widgets/Sidebar/ui/Sidebar/Sidebar";
 import { AppRouter } from "./providers/router";
 import { useTheme } from "./providers/ThemeProvider";
 import "./styles/index.scss";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 
 const App = () => {
   const { theme } = useTheme();
+
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className={classNames("app", {}, [theme])}>
       <Suspense fallback="">

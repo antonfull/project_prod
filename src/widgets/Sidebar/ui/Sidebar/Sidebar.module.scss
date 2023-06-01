@@ -6,10 +6,6 @@
   position: relative;
 }
 
-.collapsed {
-  width: 80px;
-}
-
 .switchers {
   position: absolute;
   bottom: 20px;
@@ -20,4 +16,52 @@
 
 .lang {
   margin-left: 20px;
+}
+
+
+.collapsed {
+  width: 80px;
+
+  .switchers{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lang {
+  margin-left: 0px;
+  }
+
+  .link{
+    opacity: 0;
+    transition: 0.2s opacity;
+    width: 0;
+  }
+
+}
+
+.btnCollapsed{
+  position: absolute;
+  right: -40px;
+  bottom: 40px;
+}
+
+.items{
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+}
+
+.link{
+  margin-left: 10px;
+}
+
+.item{
+  display: flex;
+  align-self: center;
+}
+
+.icon{
+  width: 30px;
+  height: 30px;
+  fill: var(--secondary-color);
 }
